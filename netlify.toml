@@ -1,16 +1,24 @@
-# Netlify build settings for The Father's Alliance
-[build]
-  command = "npm run build"
-  publish = "dist"
-  node_version = "20"
-  environment = { NODE_ENV = "production" }
+# netlify.toml — installs devDeps, pins Node, builds, then serves SPA
 
+[build]
+  # 1) install *all* dependencies (dev + prod)
+  # 2) run the Vite production build
+  command = "npm ci --include=dev && npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Backup guard: tell npm NOT to omit devDeps even in production context
+  NPM_CONFIG_PRODUCTION = "false"
+  NODE_VERSION          = "20"
+
+# Local `netlify dev`
 [dev]
-  command = "npm run dev"
+  command    = "npm run dev"
   targetPort = 5173
 
-# React Router SPA fallback
+# React Router fallback
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from   = "/*"
+  to     = "/index.html"
   status = 200
+
