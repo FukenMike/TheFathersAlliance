@@ -1,24 +1,15 @@
-# netlify.toml — installs devDeps, pins Node, builds, then serves SPA
-
 [build]
-  # 1) install *all* dependencies (dev + prod)
-  # 2) run the Vite production build
-  command = "npm ci --include=dev && npm run build"
+  command = "npm install --include=dev && npm run build"
   publish = "dist"
 
 [build.environment]
-  # Backup guard: tell npm NOT to omit devDeps even in production context
-  NPM_CONFIG_PRODUCTION = "false"
-  NODE_VERSION          = "20"
+  NODE_VERSION = "20"
 
-# Local `netlify dev`
 [dev]
-  command    = "npm run dev"
+  command = "npm run dev"
   targetPort = 5173
 
-# React Router fallback
 [[redirects]]
-  from   = "/*"
-  to     = "/index.html"
+  from = "/*"
+  to = "/index.html"
   status = 200
-
