@@ -1,0 +1,6 @@
+# keep dependency and build folders out of Git
+node_modules/
+.next/
+dist/
+.vite/
+*.log
