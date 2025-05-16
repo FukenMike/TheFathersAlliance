@@ -1,16 +1,16 @@
-# netlify.toml  – the “quit skipping dev-deps” edition
+# Netlify build settings for The Father's Alliance
 [build]
-  # first, make sure devDependencies get installed
-  command = "npm install --include=dev && npm run build"
+  command = "npm run build"
   publish = "dist"
+  node_version = "20"
+  environment = { NODE_ENV = "production" }
 
-[build.environment]
-  # force npm to include devDependencies—even though NODE_ENV=production
-  NPM_CONFIG_PRODUCTION = "false"
-  NODE_VERSION          = "20"     # matches your .node-version or .nvmrc
+[dev]
+  command = "npm run dev"
+  targetPort = 5173
 
-# SPA fallback for React Router
+# React Router SPA fallback
 [[redirects]]
   from = "/*"
-  to   = "/index.html"
+  to = "/index.html"
   status = 200
