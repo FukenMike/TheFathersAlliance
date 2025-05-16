@@ -1,0 +1,16 @@
+# Netlify build settings for The Father's Alliance
+[build]
+  command = "npm run build"
+  publish = "dist"
+  node_version = "20"
+  environment = { NODE_ENV = "production" }
+
+[dev]
+  command = "npm run dev"
+  targetPort = 5173
+
+# React Router SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
