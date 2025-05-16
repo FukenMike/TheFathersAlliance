@@ -1,0 +1,1 @@
+/* SidebarNav.tsx content as above */

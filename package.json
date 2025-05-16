@@ -10,7 +10,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/poppins": "^5.0.0",
+    "lucide-react": "^0.284.0"
   },
   "devDependencies": {
     "vite": "^4.4.0",

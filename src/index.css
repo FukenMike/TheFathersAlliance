@@ -2,26 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---------- BASE RESET ---------- */
-@layer base {
-  *,*::before,*::after { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { @apply bg-black text-bone leading-relaxed min-h-screen font-sans; }
-}
-
-/* ---------- COMPONENTS ---------- */
-@layer components {
-  /* Full-screen section with single dark overlay */
-  .section          { @apply relative flex items-center justify-center text-center min-h-screen px-6; }
-  .section::before  { content:''; @apply absolute inset-0 bg-black/45 pointer-events-none; }
-  .no-overlay::before { content:none; }
-
-  /* Primary buttons */
-  .btn-main { @apply bg-blood text-bone px-4 py-3 rounded font-semibold uppercase transition; }
-  .btn-main:hover { @apply scale-105; }
-
-  /* AMBER-ONLY CTA + “We Are Rising” */
-  .btn-cta  { @apply bg-amber text-black shadow-lg hover:shadow-amber/70; }
-  .cta-glow { @apply text-amber drop-shadow-[0_0_8px_theme(colors.amber)]; }
-}
-
+body{@apply bg-midnight text-bone antialiased;}
