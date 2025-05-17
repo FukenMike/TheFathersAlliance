@@ -12,7 +12,7 @@ const Home = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 bg-black/70 text-white">
+      <div className="relative z-10 flex flex-col items-start justify-start pt-24 md:pt-32 h-full text-center px-6 bg-black/70 text-white">
         <h1 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-lg tracking-wide">
           TAKEN
         </h1>
