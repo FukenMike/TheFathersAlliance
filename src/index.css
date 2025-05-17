@@ -3,3 +3,36 @@
 @tailwind utilities;
 
 body{@apply bg-midnight text-bone antialiased;}
+
+
+/* Resurgence Landing Page: Video Scaling */
+.hero video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Resurgence Landing Page: Manifesto Repositioning */
+.hero .manifesto {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 0.5rem 1rem;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  z-index: 2;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero .manifesto {
+    top: 55%;
+    font-size: 1rem;
+  }
+}
